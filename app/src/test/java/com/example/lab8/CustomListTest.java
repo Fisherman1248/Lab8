@@ -57,5 +57,15 @@ public class CustomListTest {
         assertFalse(list.hasCity(cityNotInList));  // Expect to fail
     }
 
+    @Test
+    public void deleteCityTest() {
+        City city = new City("Estevan", "SK");
+        list.addCity(city);
+        int listSize = list.getCount();
+        list.deleteCity(city);  // Expect to fail since deleteCity isn't implemented yet
+        assertEquals(list.getCount(), listSize - 1);
+        assertFalse(list.hasCity(city));  // Expect to fail
+    }
+
 
 }
