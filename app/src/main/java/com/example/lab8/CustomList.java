@@ -17,6 +17,17 @@ public class CustomList extends ArrayAdapter<City> {
     private ArrayList<City> cities;
     private Context context;
 
+    private CustomList list;
+    /**
+     * create a mocklist for my citylist
+     * @return
+     */
+    public CustomList MockCityList(){
+        list = new CustomList(null,new ArrayList<>());
+        return list;
+    }
+
+
     public CustomList(Context context, ArrayList<City> cities) {
         super(context, 0, cities);
         this.cities = cities;
@@ -45,12 +56,22 @@ public class CustomList extends ArrayAdapter<City> {
 
     }
 
+    /**
+     * this gets size of the list
+     * @return
+     */
     public int getCount(){
         return cities.size();
     }
 
+    /**
+     * this adds a city object to the list
+     *the second phase, you can add the
+     city * @param city
+     */
     public void addCity(City city){
-
+        cities.add(city);
     }
+
 
 }
