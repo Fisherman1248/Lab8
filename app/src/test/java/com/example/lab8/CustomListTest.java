@@ -67,5 +67,12 @@ public class CustomListTest {
         assertFalse(list.hasCity(city));  // Expect to fail
     }
 
+    @Test
+    public void countCitiesTest() {
+        assertEquals(0, list.countCities());  // Expect to fail since countCities isn't implemented yet
+        list.addCity(new City("Estevan", "SK"));
+        list.addCity(new City("Calgary", "AB"));
+        assertEquals(2, list.countCities());  // Expect to fail
+    }
 
 }
